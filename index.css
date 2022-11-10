@@ -34,6 +34,7 @@
 
 
 
+
 #navbar{
     display: flex;
     justify-content: space-evenly;
@@ -64,9 +65,24 @@
 }
 
 .cart-btn{
+    position: relative;
     color: black;
     text-decoration: none;
     font-size: 14pt;
+}
+
+
+.cart-btn i span{
+  position: absolute;
+  left: 0;
+  margin-left: 20px;
+  margin-top: -17px;
+  background-color: black;
+  color: white;
+  font-size: 9pt;
+  padding: 3px;
+  border-radius: 50%;
+  font-weight: bold;
 }
 
 
@@ -74,15 +90,21 @@
     color: black;
     text-decoration: none;
     font-size: 12pt; 
-    
+    padding: 13px 25px;
+    margin: 0;
+}
+#menu>a:hover{
+  background-color: black;
+  color: white;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 
 #menu{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
+   
 
 }
 
@@ -241,8 +263,213 @@
   #trending{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    /* grid-template-rows: ; */
+     grid-template-rows: repeat(3,1fr);
+     gap: 10px 20px; 
+    
   }
 
+  #trending img{
+    border-radius: 50%; 
+    width: 80%;
+  } 
+
+  .trending-child{
+    text-align: center;
+    margin: 25px 15px;
+   
+    
+  }
+  #trending a{
+    text-decoration: none;
+    color: black;
+
+  }
+  #trending button{
+    padding: 10px;
+    margin: 10px 20px;
+    opacity: 0.6;
+    background-color: white;
+  }
+  #trending button:hover{
+    background-color: rgb(196, 237, 224);
+    cursor: pointer;
+  }
+
+  .trending-child p{
+    opacity: 0.6;
+  }
+
+/* --------------------------------------------------------------------- */
+
+
+h1{
+  margin: 20px 0px ;
+   
+  text-align: center;
+}
+
+#what_buying{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(1,1fr);
+  gap: 10px 20px;
+ 
+}
+#what_buying img{
+  width: 80%;
+}
+#what_buying button{
+padding: 10px;
+
+}
 
   
+.what_buying_child{
+  text-align: center;
+  margin:auto;
+}
+
+
+/* -------------------------------------------------------------- */
+
+#brands{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20PX 10PX;
+
+}#brands img{
+  width: 10%;
+
+}
+
+/* ---------------------------------------------------------------------- */
+
+#blog{
+  display: flex;
+  justify-content: space-evenly;
+  
+  align-items: center;
+  text-align: center;
+ 
+}
+#blog img{
+  width: 400px;
+  border-radius: 50%;
+}
+#blog p{
+  width: 400px;
+  color: black;
+  opacity: 0.6;;
+ 
+}#blog a{
+  text-decoration: none;
+}
+
+#blog button{
+  padding: 8px;
+  margin: 10px 10px;
+  
+  background-color: white;
+}
+#blog button:hover{
+  background-color: rgb(196, 237, 224) ;
+  cursor: pointer;
+}
+
+#blog h3{
+  color: black;
+  margin-bottom: 10px;
+}
+
+#bottom-hr{
+  margin-top: 100px ;
+}
+
+/* -------------------------------------------------------------------- */
+
+
+#footer-sign{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+#footer-btn{
+  padding: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin: 30px;
+}
+
+#footer-btn:hover{
+  background-color: rgb(112, 180, 180);
+}
+
+
+#footer{
+  display: flex;
+ 
+ 
+  padding: 10px;
+}
+
+#footer-help{
+  margin-top :10px ;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+#footer p{
+margin-top: 20px;
+margin-bottom: 20px;
+opacity: 0.6;
+
+}
+
+#footer-child{
+  width: 600px;
+}
+/* --------------------------------------------------------------------- */
+
+#connect-hr{
+  margin-top: 52px;
+}
+#social-media{
+  display:grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(1,1fr);
+  column-gap: 20px;
+  row-gap: 20px;  
+  margin-top: 20px;
+}
+
+
+#social-media img{
+  width: 40px;
+   /* margin-left: 50px; */
+  border-radius: 50%;
+
+}
+
+#connect-about{
+  margin-top: 10px;
+  width: 200px;
+}
+
+.connect{
+  margin-left: 50px;
+
+}
+#connect-hr-legal{
+  margin-top: 52px;
+}
+
+#footer-right{
+  display: flex;
+}
+
+#footer-legal{
+  width: 200px;
+}
