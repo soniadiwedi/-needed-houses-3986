@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+    
+
+let url="https://636b29f3c07d8f936daf511e.mockapi.io/newprocduct1";
+let cards;
+async function getdata(){
+    try{
+        let res= await fetch(url);
+        let out=await res.json();
+        cards=[...out]
+        console.log(cards)
+        displayData(cards)
+    }catch(err){
+        alert(err)
+    }
+}
+
+getdata();
+
+
+function displayData(data){
+
+    document.querySelector("#container").innerHTML = "";
+
+    data.forEach(element =>{
+        let div=document.createElement("div")
+
+        let image_tag=document.createElement("img")
+        image_tag.src=element.link;
+
+        let title_tag=document.createElement("p")
+        title_tag.innerText=element.title;
+        title_tag.setAttribute=("class","off")
+        let  category_tag=document.createElement("p")
+        
+
+        let price_tag=document.createElement("p")
+        price_tag.innerText="Rs"+element.price;
+
+        let offer_tag=document.createElement("div")
+    //    offer_tag.innerText=element.category;
+        offer_tag.innerText=element.offer;
+
+        let btn=document.createElement("button")
+        btn.innerText="QUICK BUY";
+
+        div.append(image_tag,title_tag,category_tag,offer_tag,price_tag,btn);
+        document.querySelector("#container").append(div);
+        
+    })
+}
+
+
+    // function Addingcard(elem){
+
+    // let lsdata=JSON.parse(localStorage.getItem("cart"))||[];
+    // let flag="no"
+    // for(let i=0;i<lsdata.length;i++){
+    // if(elem.id==lsdata[i].id){
+    //     flag="yes"
+    //     break;
+    // }
+    // }
+    // if(flag=="yes"){
+    // alert("Product Already in Cart")
+    // }else{
+    // lsdata.push(elem);
+    // localStorage.setItem("cart",JSON.stringify(lsdata))
+    // alert("Product Added To Cart")
+    // }
+
+    // }
+</script>
