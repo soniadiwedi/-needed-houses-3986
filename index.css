@@ -243,7 +243,7 @@
   }
 
   .category-img{
-    height: 200px;
+   width: 200px;
     opacity: 0.7;
   }
 
@@ -326,7 +326,7 @@ padding: 10px;
   
 .what_buying_child{
   text-align: center;
-  margin:auto;
+  margin-bottom: 80px;
 }
 
 
@@ -388,88 +388,51 @@ padding: 10px;
 /* -------------------------------------------------------------------- */
 
 
-#footer-sign{
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-#footer-btn{
-  padding: 10px;
-  border: none;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  margin: 30px;
-}
-
-#footer-btn:hover{
-  background-color: rgb(112, 180, 180);
-}
-
-
-#footer{
+#footer-1{
   display: flex;
- 
- 
-  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  
 }
-
-#footer-help{
-  margin-top :10px ;
-  margin-bottom: 20px;
-  font-size: 15px;
-}
-
-#footer p{
-margin-top: 20px;
-margin-bottom: 20px;
-opacity: 0.6;
-
-}
-
-#footer-child{
-  width: 600px;
-}
-/* --------------------------------------------------------------------- */
-
-#connect-hr{
-  margin-top: 52px;
-}
-#social-media{
-  display:grid;
+#icons{
+  display: grid;
   grid-template-columns: repeat(5,1fr);
   grid-template-rows: repeat(1,1fr);
-  column-gap: 20px;
-  row-gap: 20px;  
-  margin-top: 20px;
+  gap: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
 }
-
-
-#social-media img{
+img{
   width: 40px;
-   /* margin-left: 50px; */
-  border-radius: 50%;
-
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#footer-sign{
+  width: 500px;
+ 
+}
+#footer-sign button{
+  margin-top: 30px;
+  padding: 10px;
 }
 
-#connect-about{
-  margin-top: 10px;
-  width: 200px;
-}
 
-.connect{
-  margin-left: 50px;
-
-}
-#connect-hr-legal{
-  margin-top: 52px;
-}
-
-#footer-right{
+#footer-2{
   display: flex;
+  margin: auto;
+}
+#child-1{
+  width: 500px;
+ 
+}
+#child-2{
+  width: 280px;
+}
+#child-3{
+  width: 280px;
 }
 
-#footer-legal{
-  width: 200px;
-}
+
+/* ----------------------------------------------- */
+

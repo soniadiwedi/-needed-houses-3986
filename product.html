@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://use.fontawesome.com/8f0ea6205c.js"></script>
+   <style>
+    #container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+        text-align: center;
+        row-gap: 10px;
+        column-gap: 10px;
+
+    }
+    #container img{
+        /* height: 500px; */
+        width: 300px;
+    }   
+    
+    #container button{
+        padding: 10px 30px;
+    }
+
+   </style>
+</head>
+<body>
+    <body>
+        <div class="topbar">
+            <img src="flag.jpg" alt="">
+            <a href="#">IND - INR <i class="fa fa-inr" aria-hidden="true"></i></a>
+        </div>
+        <div id="navbar">
+            <a href="./index.html"><img  class="logo" src="logo.jpg" alt=""></a> 
+            <div class="search">
+                <form>
+                <input type="text" placeholder="Search for products, brands and more">
+                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div> 
+            <a class="account-btn" target="_blank" href="./login.html"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
+            <a class="cart-btn" href="#"><i class="fa fa-shopping-basket" aria-hidden="true"><span>23</span></i>Cart</a>
+        </div>
+        <div class="line"></div>
+        <div id="menu">
+            <a href="#">Brands</a>
+            <a href="#">Holiday</a>
+            <a href="#">Sale</a>
+            <a href="#">SkinCare</a>
+            <a href="#">Hair</a>
+            <a href="#">Makeup</a>
+            <a href="#">Bath & Body</a>
+            <a href="#">Fragrance</a>
+            <a href="#">Self-Care</a>
+            <a href="#">Tools</a>
+            <a href="#">New & Trending</a>
+            <a href="#">Build a Routine</a>
+            <a href="#">Blog</a>
+
+        </div>
+
+
+
+
+    
+    <div id="offer">
+        <a href="#"> <i class="fa fa-truck" aria-hidden="true"></i>FREE US Shipping Over $49</a>
+        <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>Refer a Friend, Get $15 </a>
+        <a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i>New Customer Save 20% - Use Code NEWBIE</a>
+        <a href="#"><i class="fa fa-mobile" aria-hidden="true"></i>Download Our App</a>
+    </div>
+
+    <div id="off">
+        <h3>25% off select brands with code SINGLES + free 13-piece Beauty Bag (Worth $117) @ $165 | Shop now ></h3>
+    </div>
+
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+    
+
+let url="https://636b29f3c07d8f936daf511e.mockapi.io/newroduct";
+let cards;
+async function getdata(){
+    try{
+        let res= await fetch(url);
+        let out=await res.json();
+        cards=[...out]
+        console.log(cards)
+        displayData(cards)
+    }catch(err){
+        alert(err)
+    }
+}
+
+getdata();
+
+
+function displayData(data){
+
+    document.querySelector("#container").innerHTML = "";
+
+    data.forEach(element =>{
+        let div=document.createElement("div")
+
+        let image_tag=document.createElement("img")
+        image_tag.src=element.link;
+
+        let title_tag=document.createElement("p")
+        title_tag.innerText=element.title;
+
+        let  category_tag=document.createElement("p")
+        category_tag.innerText=element.category;
+
+        let price_tag=document.createElement("p")
+        price_tag.innerText="Rs"+element.price;
+
+        let btn=document.createElement("button")
+        btn.innerText="QUICK BUY";
+
+        div.append(image_tag,title_tag,category_tag,price_tag,btn);
+        document.querySelector("#container").append(div);
+        
+    })
+}
+
+
+    function Addingcard(elem){
+
+    let lsdata=JSON.parse(localStorage.getItem("cart"))||[];
+    let flag="no"
+    for(let i=0;i<lsdata.length;i++){
+    if(elem.id==lsdata[i].id){
+        flag="yes"
+        break;
+    }
+    }
+    if(flag=="yes"){
+    alert("Product Already in Cart")
+    }else{
+    lsdata.push(elem);
+    localStorage.setItem("cart",JSON.stringify(lsdata))
+    alert("Product Added To Cart")
+    }
+
+    }
+</script>
