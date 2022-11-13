@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *{
     padding: 0px;
     margin: 0px;
+    font-family: 'Poppins', sans-serif;
 }
 .line{
   border-bottom: 2px solid black;
@@ -37,9 +40,14 @@
 
 #navbar{
     display: flex;
+    top: -1px;
+    position: sticky;
     justify-content: space-evenly;
     align-items: center;
     margin: auto;
+    background-color: white;
+    border-bottom: 2px solid black;
+    z-index: 999;
 
 }.logo{
     width: 100px;
@@ -59,10 +67,65 @@
 
 
 .account-btn{
+    position: relative;
     color: black;
     text-decoration: none;
     font-size: 14pt;
+    list-style: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
+
+.account-btn:hover{
+  background-color: #eceaea;
+ 
+}
+
+.account-menu{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  margin-top: -10px;
+  position: absolute;
+  background-color: #eceaea;
+  width: 120px;
+  left: 0;
+  transition: all 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.account-menu button{
+  border: none;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+}
+.account-btn:hover .account-menu{
+  opacity: 1;
+  visibility: visible;
+  margin-top: 10px;
+}
+
+.login{
+  background-color: black;
+  color: white;
+  
+}
+.register{
+  background-color: white;
+  color: black;
+}
+.login:hover{
+ 
+ color: black;
+ background-color: aquamarine;
+  cursor: pointer;
+  }
+
+.register:hover{
+  background-color: rgb(165, 216, 199);
+  cursor: pointer;
+}
+
 
 .cart-btn{
     position: relative;
@@ -89,7 +152,7 @@
 #menu>a{
     color: black;
     text-decoration: none;
-    font-size: 12pt; 
+    font-size: 11pt; 
     padding: 13px 25px;
     margin: 0;
 }
@@ -164,33 +227,30 @@
 
 .main-slider-container{
     position: relative;
-    display: flex;
-    justify-content: center;
-    margin-left: -10px;
+  
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
   }
   
   
   
   .slider-container{
     position: relative;
-    width: 1500px;
-    height: 500px;
+  
   /*   background: red; */
-    overflow-x: hidden;
     margin-top: 20px;
   }
   
   .inner-slider{
     display: flex;
-    width: 6000px;
-    height: 500px;
-    transition: 0.2s;
+ 
+    transition: all 0.3s ease-in-out;
   
   }
   
   .inner-slider img{
-    height: 500px;
-    width: 1500px;
+    width: 100%;
   }
   
   #id1, #id2, #id3{
@@ -213,7 +273,7 @@
     display: flex;
     position: absolute;
     font-size: 14pt;
-    left: 750px;
+    left: 50%;
     bottom: 0;
     background: #f1f3f6;
     
@@ -390,27 +450,33 @@ padding: 10px;
 
 #footer-1{
   display: flex;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  
+width: 90%;
+margin: auto;
+justify-content: space-between;
+}
+#footer-1 div{
+  width: 65%;
+}
+#footer-1 div:nth-child(2){
+padding: 20px;
+  margin-right: 170px;
 }
 #icons{
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-template-rows: repeat(1,1fr);
-  gap: 5px;
-  margin-top: 30px;
-  margin-bottom: 30px;
 
+margin-top: 20px;
 }
-img{
-  width: 40px;
-  margin-left: 10px;
-  margin-right: 10px;
+#icons>img{
+  width: 35px;
+  margin-right: 8px;
+
 }
 #footer-sign{
   width: 500px;
+
  
+}
+#footer-sign h5{
+  margin-top: 20px;
 }
 #footer-sign button{
   margin-top: 30px;
@@ -420,15 +486,40 @@ img{
 
 #footer-2{
   display: flex;
-  margin: auto;
+width: 90%;
+margin: auto;
+justify-content: space-between;
+}
+#footer-2>div:first-child,
+#footer-2>div:nth-child(2) div
+  {
+  border-top: 1px solid lightgray;
+}
+#footer-2>div:nth-child(2) div
+{
+  margin-left: 20px;
+}
+#footer-2>div:nth-child(2){
+display: flex;
+justify-content: space-between;
 }
 #child-1{
-  width: 500px;
+width: 40%; 
+padding: 15px;
+}
+#child-1>h5,#child-1 p{
+
+  padding: 10px;
+}
+#child-1 p i{
+  margin-right: 8px;
+}
+#footer-2>div:nth-child(2) div h5,
+#footer-2>div:nth-child(2) div p{
  
+  padding: 15px;
 }
-#child-2{
-  width: 280px;
-}
+
 #child-3{
   width: 280px;
 }
@@ -436,3 +527,7 @@ img{
 
 /* ----------------------------------------------- */
 
+#details p{
+  opacity: 0.6;
+  margin-bottom: 40px;
+}

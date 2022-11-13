@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/8f0ea6205c.js"></script>
+    <script src="https://kit.fontawesome.com/25b09b4978.js" crossorigin="anonymous"></script>
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+          .img{
+            width: 20%;
+          }
+
+          #cart-container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+          }
+    </style>
+</head>
+<body>
+  <div class="topbar">
+    <img src="flag.jpg" alt="">
+    <a href="#">IND - INR <i class="fa fa-inr" aria-hidden="true"></i></a>
+</div>
+<div id="navbar">
+    <a href="./index.html"><img  class="logo" src="logo.jpg" alt=""></a> 
+    <div class="search">
+        <form>
+        <input oninput="searchfun()" type="text" placeholder="Search for products, brands and more">
+        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+    </div> 
+    <li class="account-btn" href="./login.html"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
+        <ul class="account-menu">
+           <a href="./mylogin.html"> <button class="login">Login</button></a>
+            <a href="./register.html"><button class="register">Register</button></a>
+
+        </ul>
+    </li> 
+
+    <a class="cart-btn" href="./cart.html"><i class="fa-solid fa-cart-shopping"><span>0</span></i>Cart</a>
+</div>
+
+  <div>
+        <h1>Your Cart</h1>
+        <!-- <table >
+            <thead id="head">
+                <th >Items</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th >Subtotal</th>
+            </thead>
+            <tbody>
+                <td class="img"></td>
+                <td class="price"></td>
+                <td class="qnt"></td>
+                <td id="cart-total"></td>
+
+            </tbody>
+        </table> -->
+
+        <h3 id="total">Your Total cart Price is:- <span id="cart-total"></span></h3>
+        <div id="cart-container"></div>
+    </div>
+</body>
+</html>
+<script>
+    
+    let ls_data=JSON.parse(localStorage.getItem("cart"))||[];
+Displaydata(ls_data);
+
+function totalPrice(){
+  let ttpr= JSON.parse(localStorage.getItem("cart"))||[];
+  let total_price= 0;
+  ttpr.forEach((el)=>{
+    console.log(el.total);
+    total_price+=Number(el.total);
+  })
+  console.log(total_price);
+    document.querySelector("#cart-total").innerText=total_price.toFixed(2);
+}
+
+totalPrice();
+    function Displaydata(alldata){
+      // console.log(alldata.length)
+      console.log("dis");
+      document.querySelector("#cart-container").innerHTML='';
+   
+      alldata.forEach((element,index)=>{
+        let div=document.createElement("div")
+
+        let image_tag=document.createElement("img")
+        image_tag.src=element.link;
+
+        let title_tag=document.createElement("p")
+        title_tag.innerText=element.title;
+
+        let  category_tag=document.createElement("p")
+        category_tag.innerText=element.category;
+
+        let price_tag=document.createElement("p")
+        price_tag.innerText="Rs"+element.price;
+
+      let add_btn=document.createElement("button");
+      add_btn.innerText="+";
+      add_btn.addEventListener("click",function(){
+        increseCart(element);
+      })
+      let span_tag=document.createElement("span");
+      span_tag.innerText=element.quantity;
+
+      let remove_btn=document.createElement("button");
+      remove_btn.innerText="-"
+      remove_btn.addEventListener("click",function(){
+        decreseCart(element);
+      });
+      // document.querySelector(".img").append(image_tag)
+      // document.querySelector(".price").append(price_tag)
+      // document.querySelector(".qnt").append(add_btn,span_tag,remove_btn)
+      div.append(image_tag,title_tag,category_tag,price_tag,add_btn,span_tag,remove_btn);
+      
+      document.querySelector("#cart-container").append(div);
+    })
+    }
+
+function decreseCart(el){
+  let crtData=JSON.parse(localStorage.getItem("cart"))||[];
+    crtData.forEach((ele)=>{
+      if(el.id==ele.id){
+        ele.quantity--;
+        if(ele.quantity<=0){
+          deleteData(ele);
+          return;
+        }else{
+         
+          ele.total=(Number(ele.total)-Number(el.price)).toFixed(2);
+          localStorage.setItem("cart",JSON.stringify(crtData));
+          totalPrice();
+          Displaydata(crtData); 
+          console.log(crtData);
+          return;
+        }
+      }
+    })
+  
+}
+
+function deleteData(el){
+  let dd= JSON.parse(localStorage.getItem("cart"))||[];
+  dd.forEach((ele,i)=>{
+    if(el.id==ele.id){
+
+      dd.splice(i,1);
+      return;
+    }
+  })
+ 
+    Displaydata(dd); 
+    console.log(dd);
+  localStorage.setItem("cart",JSON.stringify(dd));
+  totalPrice();
+
+}
+
+function increseCart(el){
+        let crtData=JSON.parse(localStorage.getItem("cart"))||[];
+    crtData.forEach((ele)=>{
+      if(el.id==ele.id){
+        ele.quantity++;
+        ele.total=(Number(ele.total)+Number(el.price)).toFixed(2);
+        return;
+      }
+    })
+    Displaydata(crtData); 
+    localStorage.setItem("cart",JSON.stringify(crtData));
+    totalPrice();
+  
+}
+
+
+function cart(){
+        let crpu=JSON.parse(localStorage.getItem("cart"))||[];
+        document.querySelector("#cart-count").innerText=crpu.length;
+    }
+
+    cart();
+
+    // Displaydata(ls_data)
+</script>

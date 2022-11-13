@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.fontawesome.com/8f0ea6205c.js"></script>
+    <script src="https://kit.fontawesome.com/25b09b4978.js" crossorigin="anonymous"></script>
     <title>Home Page</title>
     <link rel="stylesheet" href="index.css">
    
@@ -18,14 +19,21 @@
             <a href="./index.html"><img  class="logo" src="logo.jpg" alt=""></a> 
             <div class="search">
                 <form>
-                <input type="text" placeholder="Search for products, brands and more">
+                <input oninput="searchfun()" type="text" placeholder="Search for products, brands and more">
                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
             </div> 
-            <a class="account-btn" target="_blank" href="./login.html"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
-            <a class="cart-btn" href="#"><i class="fa fa-shopping-basket" aria-hidden="true"><span>23</span></i>Cart</a>
+            <li class="account-btn" href="./login.html"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
+                <ul class="account-menu">
+                   <a href="./mylogin.html"> <button class="login">Login</button></a>
+                    <a href="./register.html"><button class="register">Register</button></a>
+
+                </ul>
+            </li> 
+
+            <a class="cart-btn" href="./cart.html"><i class="fa-solid fa-cart-shopping"><span>0</span></i>Cart</a>
         </div>
-        <div class="line"></div>
+        <!-- <div class="line"></div> -->
         <div id="menu">
             <a href="#">Brands</a>
             <a href="#">Holiday</a>
@@ -306,7 +314,7 @@
          
         </div>
       
-        <div id>
+        <div >
             <h5>Connect with us</h5>
             <div id="icons">
                 <img src="https://louisville.edu/mcconnellcenter/images/facebook_logos_PNG19748.png/image" alt="">
@@ -323,56 +331,48 @@
        <div id="footer-2">
         
         <div id="child-1">
-            <hr>
-            <br>
-            <h5>Help & Information</h5><br>
-            <p><i class="fa fa-phone" aria-hidden="true"></i>Customer Service</p><br>
-            <p><i class="fa fa-truck" aria-hidden="true"></i>Delivery Information </p><br>
-            <p><i class="fa fa-refresh" aria-hidden="true"></i>Returns & Refunds</p><br>
-            <p><i class="fa fa-question-circle" aria-hidden="true"></i>Help center</p><br>
-            <p><i class="fa fa-crosshairs" aria-hidden="true"></i>Track my order</p><br>
-            <p>Accessibility</p><br>
-            <p><i class="fa fa-futbol-o" aria-hidden="true"></i>Cookies Settings</p><br>
+
+            
+            <h5>Help & Information</h5>
+            <p><i class="fa fa-phone" aria-hidden="true"></i>Customer Service</p>
+            <p><i class="fa fa-truck" aria-hidden="true"></i>Delivery Information </p>
+            <p><i class="fa fa-refresh" aria-hidden="true"></i>Returns & Refunds</p>
+            <p><i class="fa fa-question-circle" aria-hidden="true"></i>Help center</p>
+            <p><i class="fa fa-crosshairs" aria-hidden="true"></i>Track my order</p>
+            <p>Accessibility</p>
+            <p><i class="fa fa-futbol-o" aria-hidden="true"></i>Cookies Settings</p>
         </div>
+        <div>
         <div id="child-2">
-            <hr><br>
-            <h5>About India Herbal Creation</h5><br>
-            <p>Key Workers Discount</p><br>
-            <p>About Us</p><br>
-            <p>Affiliate Program</p><br>
-            <p>Brand Directory</p><br>
-            <p>Coupon Codes</p><br>
-            <p>Refer A Friend</p><br>
-            <p>Student Discount</p><br>
-            <p>Join SkinStore Experts</p><br>
+            <h5>About India Herbal Creation</h5>
+            <p>Key Workers Discount</p>
+            <p>About Us</p>
+            <p>Affiliate Program</p>
+            <p>Brand Directory</p>
+            <p>Coupon Codes</p>
+            <p>Refer A Friend</p>
+            <p>Student Discount</p>
+            <p>Join SkinStore Experts</p>
             </div>
         <div id="child-3">
-            <hr><br>
-            <h5>Legal</h5><br>
-            <p>Cookie Information</p><br>
-            <p>Privacy Policy</p><br>
-            <p>Terms & Conditions</p><br>
-            <p>Modern Slavery Statement</p><br>
+            <h5>Legal</h5>
+            <p>Cookie Information</p>
+            <p>Privacy Policy</p>
+            <p>Terms & Conditions</p>
+            <p>Modern Slavery Statement</p>
     
         </div>
         <div>
-            <hr><br>
-            <h5>How To Contact Us</h5><br>
-            <p>Message us</p><br>
-            <p>Free Beauty Consultations</p><br>
+            <h5>How To Contact Us</h5>
+            <p>Message us</p>
+            <p>Free Beauty Consultations</p>
             
         </div>
+    </div>
        </div>
     
-
-
-
-
-
-
-    
-
-
-    ajgfjashgfjahbfasjgfb
 </body>
 </html>
+<script src="index.js">
+
+</script>
