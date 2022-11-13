@@ -4,25 +4,176 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/8f0ea6205c.js"></script>
     <title>Product Page</title>
-    <style>
-        #container{
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            grid-template-rows: auto;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="index.css">
+   
+   <style>
+    #container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+        text-align: center;
+        row-gap: 10px;
+        column-gap: 10px;
+
+    }
+    #container img{
+        /* height: 500px; */
+        width: 300px;
+    }   
+    
+    #container button{
+        padding: 10px 30px;
+    }
+
+   
+
+   </style>
 </head>
 <body>
+    <body>
+        <div class="topbar">
+            <img src="flag.jpg" alt="">
+            <a href="#">IND - INR <i class="fa fa-inr" aria-hidden="true"></i></a>
+        </div>
+        <div id="navbar">
+            <a href="./index.html"><img  class="logo" src="logo.jpg" alt=""></a> 
+            <div class="search">
+                <form>
+                <input oninput="search()" type="text" placeholder="Search for products, brands and more">
+                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div> 
+            <a class="account-btn" target="_blank" href="./login.html"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
+            <a class="cart-btn" target="_blank" href="./cart.html"><i class="fa fa-shopping-basket" aria-hidden="true"><span id="cart-count"></span></i>Cart</a>
+        </div>
+        <!-- <div class="line"></div> -->
+        <div id="menu">
+            <a href="#">Brands</a>
+            <a href="#">Holiday</a>
+            <a href="#">Sale</a>
+            <a href="#">SkinCare</a>
+            <a href="#">Hair</a>
+            <a href="#">Makeup</a>
+            <a href="#">Bath & Body</a>
+            <a href="#">Fragrance</a>
+            <a href="#">Self-Care</a>
+            <a href="#">Tools</a>
+            <a href="#">New & Trending</a>
+            <a href="#">Build a Routine</a>
+            <a href="#">Blog</a>
+
+        </div>
+
+    <div id="offer">
+        <a href="#"> <i class="fa fa-truck" aria-hidden="true"></i>FREE US Shipping Over $49</a>
+        <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>Refer a Friend, Get $15 </a>
+        <a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i>New Customer Save 20% - Use Code NEWBIE</a>
+        <a href="#"><i class="fa fa-mobile" aria-hidden="true"></i>Download Our App</a>
+    </div>
+
+    <div id="off">
+        <h3>25% off select brands with code SINGLES + free 13-piece Beauty Bag (Worth $117) @ $165 | Shop now ></h3>
+    </div>
+
+    <div id="details">
+        <h1>Shop SkinCeuticals Skincare</h1>
+        <p>The SkinCeuticals story began with Dr. Sheldon Pinnell’s groundbreaking research on vitamin C in 1992, long before the company was established in 1997. In the years since, SkinCeuticals has remained committed to using evidence-based research to develop new antioxidant and cosmeceutical formulations, and has grown to become the #1 Medical Skincare Brand in the U.S."[1]
+
+            At SkinCeuticals, the formulation philosophy is driven by the physician-based skincare prescription for optimal skin health: prevent future signs of aging with antioxidants, correct visible concerns advanced corrective products and protect healthy skin with sunscreen. An effective skincare regimen must contain these three fundamental elements before being further customized and tailored for every unique skin need.
+            
+            1 2020 Kline Professional Skincare: U.S. Market Analysis and Opportunities
+            
+            </p>
+    </div>
+
+
+
+
     <div id="container"></div>
+
+
+    
+    <hr id="bottom-hr">
+
+
+    <div id="footer-1">
+        <div id="footer-sign">
+            <h5 >Sign up to our email list and receive 20% off your next order</h5>
+            <button id="footer-btn">SIGN UP</button>
+         
+        </div>
+      
+        <div >
+            <h5>Connect with us</h5>
+            <div id="icons">
+                <img src="https://louisville.edu/mcconnellcenter/images/facebook_logos_PNG19748.png/image" alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="">
+                <img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" alt="">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145808.png" alt="">
+                <img src="data:image/png;base64,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" alt="">
+            </div>
+         
+        </div>
+       </div>
+    
+        
+       <div id="footer-2">
+        
+        <div id="child-1">
+
+            
+            <h5>Help & Information</h5>
+            <p><i class="fa fa-phone" aria-hidden="true"></i>Customer Service</p>
+            <p><i class="fa fa-truck" aria-hidden="true"></i>Delivery Information </p>
+            <p><i class="fa fa-refresh" aria-hidden="true"></i>Returns & Refunds</p>
+            <p><i class="fa fa-question-circle" aria-hidden="true"></i>Help center</p>
+            <p><i class="fa fa-crosshairs" aria-hidden="true"></i>Track my order</p>
+            <p>Accessibility</p>
+            <p><i class="fa fa-futbol-o" aria-hidden="true"></i>Cookies Settings</p>
+        </div>
+        <div>
+        <div id="child-2">
+            <h5>About India Herbal Creation</h5>
+            <p>Key Workers Discount</p>
+            <p>About Us</p>
+            <p>Affiliate Program</p>
+            <p>Brand Directory</p>
+            <p>Coupon Codes</p>
+            <p>Refer A Friend</p>
+            <p>Student Discount</p>
+            <p>Join SkinStore Experts</p>
+            </div>
+        <div id="child-3">
+            <h5>Legal</h5>
+            <p>Cookie Information</p>
+            <p>Privacy Policy</p>
+            <p>Terms & Conditions</p>
+            <p>Modern Slavery Statement</p>
+    
+        </div>
+        <div>
+            <h5>How To Contact Us</h5>
+            <p>Message us</p>
+            <p>Free Beauty Consultations</p>
+            
+        </div>
+    </div>
+       </div>
+
+
+
+
+
+
 </body>
 </html>
 
 <script>
     
 
-let url="https://636b29f3c07d8f936daf511e.mockapi.io/newprocduct1";
+let url="https://636b29f3c07d8f936daf511e.mockapi.io/newroduct";
 let cards;
 async function getdata(){
     try{
@@ -40,7 +191,7 @@ getdata();
 
 
 function displayData(data){
-
+      console.log(data.length)
     document.querySelector("#container").innerHTML = "";
 
     data.forEach(element =>{
@@ -51,44 +202,69 @@ function displayData(data){
 
         let title_tag=document.createElement("p")
         title_tag.innerText=element.title;
-        title_tag.setAttribute=("class","off")
+
         let  category_tag=document.createElement("p")
-        
+        category_tag.innerText=element.category;
 
         let price_tag=document.createElement("p")
         price_tag.innerText="Rs"+element.price;
 
-        let offer_tag=document.createElement("div")
-    //    offer_tag.innerText=element.category;
-        offer_tag.innerText=element.offer;
-
         let btn=document.createElement("button")
         btn.innerText="QUICK BUY";
+      
+          btn.addEventListener("click",function(){
+            Addingcard(element);
+          })
 
-        div.append(image_tag,title_tag,category_tag,offer_tag,price_tag,btn);
+        div.append(image_tag,title_tag,category_tag,price_tag,btn);
         document.querySelector("#container").append(div);
         
     })
 }
 
 
-    // function Addingcard(elem){
+    function Addingcard(elem){
 
-    // let lsdata=JSON.parse(localStorage.getItem("cart"))||[];
-    // let flag="no"
-    // for(let i=0;i<lsdata.length;i++){
-    // if(elem.id==lsdata[i].id){
-    //     flag="yes"
-    //     break;
-    // }
-    // }
-    // if(flag=="yes"){
-    // alert("Product Already in Cart")
-    // }else{
-    // lsdata.push(elem);
-    // localStorage.setItem("cart",JSON.stringify(lsdata))
-    // alert("Product Added To Cart")
-    // }
+    let lsdata=JSON.parse(localStorage.getItem("cart"))||[];
+    let flag="no"
+    for(let i=0;i<lsdata.length;i++){
+    if(elem.id==lsdata[i].id){
+        flag="yes"
+        break;
+    }
+    }
+    if(flag=="yes"){
+    alert("Product Already in Cart")
+    }else{
+        elem["quantity"]=1;
+        elem["total"]=elem.price;
+    lsdata.push(elem);
+    localStorage.setItem("cart",JSON.stringify(lsdata))
+    cart();
+    alert("Product Added To Cart")
+    
+    }
 
-    // }
+    }
+
+
+
+    function search(){
+        let inp=document.querySelector("input").value;
+        let newdata=cards.filter(function (elem){
+            return elem.title.toLowerCase().includes(inp.toLocaleLowerCase())
+        })
+
+        displayData(newdata);
+    }
+
+
+
+    function cart(){
+        let crpu=JSON.parse(localStorage.getItem("cart"))||[];
+        document.querySelector("#cart-count").innerText=crpu.length;
+    }
+
+    cart();
+
 </script>

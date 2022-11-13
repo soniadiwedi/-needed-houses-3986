@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="./register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/25b09b4978.js" crossorigin="anonymous"></script>
+    <title>SkinStore: LOGIN</title>
+    <style>
+           input[type="submit"]{
+            padding: 10px;
+            margin-top: 20px;
+           }
+
+           a{
+            margin-top: 20px;
+            padding: 10px;
+           }
+    </style>
+</head>
+<body>
+
+
+    <div class="header">
+        <a href="./index.html"><img src="./logo.jpg" alt="" class="logo"></a>         
+    </div>
+
+
+    <div class="form-container">
+        <div class="login-form">
+            <h3>Sign Up</h3>
+            <ul class="social-login">
+                <li><a href="">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="">
+                        <p>Facebook</p>
+                    </a>
+                </li>
+                <li><a href="">
+                        <img src="https://cdn.cdnlogo.com/logos/g/35/google-icon.svg" alt="">
+                        <p>Google</p>
+                    </a>
+                </li>
+            </ul>
+            <h3 class="heading-2">Or create an email account</h3>
+            <form class="register-form" action="">
+                <p class="form-label">* Full Name</p>
+                <input id="name" type="text">
+                <p class="form-label">* Email address</p>
+                <input id="email" type="text">
+                <p class="form-label">* Confirm Email address</p>
+                <input id="cemail" type="text">
+                <p class="form-label pwd">* Password <i class="fa-solid fa-eye"></i></p>
+                <input id="pw" type="text">
+                <p class="form-label">* Confirm Password</p>
+                <input id="cpw" type="text">
+                <p class="form-label">Phone Number (Optional)</p>
+                <input id="number" type="text">
+                <input id="submit" type="submit" value="continue">
+            </form>
+
+            <a href="./mylogin.html">Login</a>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+<script>
+
+    
+    let arr=[]
+                  document.querySelector("#submit").addEventListener("click",function (event){
+        event.preventDefault;
+        let name=document.querySelector("#name").value;
+
+        let email=document.querySelector("#email").value;
+
+        let confirmemail=document.querySelector("#cemail").value;
+
+        let pass=document.querySelector("#pw").value;
+
+        let confirmpw=document.querySelector("#cpw").value;
+
+        let phone=document.querySelector("#number").value;
+
+
+        let obj={
+            name,
+            email,
+            confirmemail,
+            pass,
+            confirmpw,
+            phone
+        };
+arr.push(obj)
+console.log(arr)
+ localStorage.setItem("login",JSON.stringify(arr))
+    })
+</script>

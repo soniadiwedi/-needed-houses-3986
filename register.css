@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+
+body{
+    background-color: #f2f2f2;
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 110px;
+    /* border-bottom: 2px solid black; */
+    box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.25);
+}
+
+
+.logo{
+    height: 100px;
+    user-select: none;
+}
+
+
+.form-container{
+    display: flex;
+    justify-content: center;
+}
+
+
+.login-form{
+    background-color: white;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 650px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.social-login{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    border-bottom: 1px solid grey;
+    margin: 20px 0px;
+    padding-bottom: 20px;
+}
+
+
+.social-login li{
+    display: flex;
+    justify-content: center;
+    border: 1px solid grey;
+    font-size: 10pt;
+    font-weight: bold;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-login li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 115px;
+    color: #666666;
+}
+
+
+.social-login li:hover{
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+}
+
+.social-login li img{
+    width: 25px;
+    padding-right: 7px;
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.heading-2{
+    margin-bottom: 30px;
+}
+
+.form-label{
+    font-size: 10pt;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+input[type="text"]{
+    font-size: 12pt;
+    padding: 10px 50px 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #666666;
+}
+
+button[type="submit"]{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2e3337;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+button[type="submit"]:hover{
+    background-color: rgba(0, 255, 255, 0.622);
+    color: #666666;
+}
+
+
+.pwd{
+    position: relative;
+}
+i{
+    position: absolute;
+    right: 10px;
+    bottom: -40px;
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+ .register-btn{
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 15px;
+
+} 

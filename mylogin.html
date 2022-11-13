@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="./register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/25b09b4978.js" crossorigin="anonymous"></script>
+    <title>SkinStore: LOGIN</title>
+</head>
+<style>
+    input[type="email"]
+    { padding: 10px;
+
+    }
+
+    input[type="password"]
+    {
+        padding: 10px;
+    }
+</style>
+<body>
+
+
+    <div class="header">
+        <a href="./index.html"><img src="./logo.jpg" alt="" class="logo"></a>         
+    </div>
+
+
+    <div class="form-container">
+        <div class="login-form">
+            <!-- <h3></h3>
+            <ul class="social-login">
+                <li><a href="">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="">
+                        <p>Facebook</p>
+                    </a>
+                </li>
+                <li><a href="">
+                        <img src="https://cdn.cdnlogo.com/logos/g/35/google-icon.svg" alt="">
+                        <p>Google</p>
+                    </a>
+                </li>
+            </ul> -->
+            <h3 class="heading-2">Existing Customers</h3>
+            <form class="register-form" action="">
+                <!-- <p class="form-label">* Full Name</p>
+                <input type="text"> -->
+                <p class="form-label">* Email address</p>
+                <input type="email" id="email">
+                <!-- <p class="form-label">* Confirm Email address</p>
+                <input type="text"> -->
+                <p class="form-label pwd">* Password <i class="fa-solid fa-eye"></i></p>
+                <input type="password" id="password">
+                <!-- <p class="form-label">* Confirm Password</p>
+                <input type="text"> -->
+                <!-- <p class="form-label">Phone Number (Optional)</p>
+                <input type="text"> -->
+                <button type="submit" value="continue">CONTINUE</button>
+            </form>
+            <h3></h3>
+            <ul class="social-login">
+                <li><a href="">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="">
+                        <p>Facebook</p>
+                    </a>
+                </li>
+                <li><a href="">
+                        <img src="https://cdn.cdnlogo.com/logos/g/35/google-icon.svg" alt="">
+                        <p>Google</p>
+                    </a>
+                </li>
+            </ul>
+            <h3>New Customers</h3>
+            <a class="register-btn" href="./register.html">REGISTER</a>
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
+
+<script>
+let arr=[]||JSON.parse(localStorage.getItem(""))
+document.querySelector("form").addEventListener("click",function (event){
+        event.preventDefault;
+        let email=document.querySelector("#email").value;
+        let password=document.querySelector("#password").value;
+        let name=document.querySelector("login");
+        
+        arr.forEach(element => {
+            if(email==element.email && password===element.password)
+            {
+                window.location.href="index.html"
+            }
+            else{
+                alert("wrong credentials");
+        }
+        });
+    })
+
+
+
+</script>
